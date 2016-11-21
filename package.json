@@ -1,6 +1,6 @@
 {
-  "name": "legorange2.0",
-  "version": "2.0.0",
+  "name": "legorange3.0",
+  "version": "3.0.0",
   "description": "Application LegOrange using webcom",
   "main": "",
   "scripts": {
@@ -45,12 +45,11 @@
     "web-app-manifest-loader": "^0.1.1",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
-    "webpack-sources": "^0.1.1",
-    "webpack-vendor-chunk-plugin": "^1.0.0"
+    "webpack-sources": "^0.1.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SimonBaumannPro/legorange2.0.git"
+    "url": "git+https://github.com/SimonBaumannPro/legorange3.0.git"
   },
   "author": "Simon Baumann",
   "license": "ISC",
@@ -58,7 +57,7 @@
     "node": ">=4"
   },
   "bugs": {
-    "url": "https://github.com/SimonBaumannPro/legorange2.0/issues"
+    "url": "https://github.com/SimonBaumannPro/legorange3.0/issues"
   },
-  "homepage": "https://github.com/SimonBaumannPro/legorange2.0#readme"
+  "homepage": "https://github.com/SimonBaumannPro/legorange3.0#readme"
 }

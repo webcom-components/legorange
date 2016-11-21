@@ -3,12 +3,10 @@ const process = require('process');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const VendorChunkPlugin = require('webpack-vendor-chunk-plugin');
-
 
 const config = {
 	entry: {
-		vendor: [
+		ext: [
 				 'imports?exports=>false&module=>false!jquery',
 				 'mouse',
 				 'widgets',
@@ -23,12 +21,12 @@ const config = {
 				 'jq-confirm-css',
 				 'imports?exports=>false&module=>false!webcom'
 		],
-		script: [
-		// 'file?name=manifest.json!./manifest.json',
-		'./src/script.js']
+		app: [
+			'file?name=manifest.json!./manifest.json',
+			'./src/script.js']
 	},
 	output: {
-		filename: '[name].js',
+		filename: 'bundle.js',
 		path: path.join(__dirname, './dist'),
 		publicPath: process.env.PUBLIC_PATH || '/'
 	},
@@ -85,8 +83,7 @@ const config = {
 				favicon: './src/assets/images/icons/webcom_logo.ico'
 			}
 		),
-		new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js', Infinity),
-		new VendorChunkPlugin('vendor'),
+		new webpack.optimize.CommonsChunkPlugin('ext', 'ext.bundle.js', Infinity),
 		new webpack.DefinePlugin({
 			__WEBCOM_SERVER__: JSON.stringify(process.env.WS_SERVER || 'https://webcom.orange.com'),
 			__NAMESPACE__: JSON.stringify(process.env.NAMESPACE || 'legorange')
@@ -97,7 +94,7 @@ const config = {
 };
 
 if (process.env.NODE_ENV !== 'production') {
-	config.entry.vendor = config.entry.vendor.concat([
+	config.entry.ext = config.entry.ext.concat([
 		'./hotReload',
 		'webpack/hot/dev-server'
 	]);
