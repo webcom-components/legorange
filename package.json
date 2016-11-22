@@ -45,6 +45,7 @@
     "web-app-manifest-loader": "^0.1.1",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
+    "webpack-manifest-plugin": "^1.1.0",
     "webpack-sources": "^0.1.1"
   },
   "repository": {

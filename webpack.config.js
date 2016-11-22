@@ -3,6 +3,8 @@ const process = require('process');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
+
 
 const config = {
 	entry: {
@@ -22,7 +24,7 @@ const config = {
 				 'imports?exports=>false&module=>false!webcom'
 		],
 		app: [
-			'file?name=manifest.json!./manifest.json',
+			//'file?name=manifest.json!./manifest.json',
 			'./src/script.js']
 	},
 	output: {
@@ -87,6 +89,10 @@ const config = {
 		new webpack.DefinePlugin({
 			__WEBCOM_SERVER__: JSON.stringify(process.env.WS_SERVER || 'https://webcom.orange.com'),
 			__NAMESPACE__: JSON.stringify(process.env.NAMESPACE || 'legorange')
+		}),
+		new ManifestPlugin({
+			fileName: 'manifest.json',
+			basepath:'./'
 		})
 	],
 	progress: true,
