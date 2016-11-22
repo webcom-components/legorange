@@ -76,10 +76,12 @@ html,body {
 }
 
 .dezoom {
+    z-index: 3;
     width: 100px !important;
     height: 100px !important;
     border-radius: 50%;
-    background: url('../images/icons/zoom_icon.png') no-repeat !important;
+    margin: 0 0 1rem 0;
+    background: url('../images/icons/zoom_icon.png') no-repeat;
     background-size: 100% 100%;
 }
 

@@ -230,7 +230,7 @@ function globalInit() {
   $("div").removeClass('ui-panel-dismiss');
   $('a').removeClass('ui-link');
 
-  btn_dezoom.removeClass().addClass('dezoom button');
+  btn_dezoom.removeClass().addClass('dezoom');
 
   // = 1 si mobile, 0 sinon
   smartphone = init.detectDevice();

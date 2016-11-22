@@ -17,14 +17,24 @@ var webcom_url=__WEBCOM_SERVER__+"/base/"+__NAMESPACE__,
 
 module.exports.eraseAll = function() {
 	$.confirm({
+//type:'purple',
     	icon: 'fa fa-warning',
-    	title: 'Attention !',
-    	content : 'voulez vous supprimer toutes les briques ?',
-    	confirmButton: 'Oui',
-    	cancelButton: 'Non',
-    	confirm: function () {
-    		legobase.child(domain).remove();
-    	},
+      // container: '#overlayPanel',
+      closeIcon:true,
+      title: 'Warning !',
+    	content : 'Remove all bricks ?',
+      buttons: {
+        Okay: {
+            action: function () {
+              legobase.child(domain).remove();
+              // $.alert('bricks removed !');
+            }
+        },
+        Cancel: {
+            action: function () {
+            }
+        },
+    } 	
 	});
 };
 
