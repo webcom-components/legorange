@@ -28,8 +28,7 @@ const config = {
 	},
 	output: {
 		filename: 'bundle.js',
-		path: path.join(__dirname, './dist'),
-		publicPath: process.env.PUBLIC_PATH || '/'
+		path: path.join(__dirname, './dist/')
 	},
 	resolve: {
     	root: __dirname,
@@ -54,15 +53,9 @@ const config = {
 	module: {
 		loaders: [
 			//{ test: /\.png$/, loader: 'url-loader?mimetype=image/png'},
-			{ test: /\.png$/, loader: 'url-loader?name=src/assets/images/icons/[name].[ext]'},
-			{
-        		test: /\.scss$/,
-        		loaders: ["style", "css", "sass"]
-      		},
-			{ 
-			  	test: /\.(eot|gif|woff|woff2|ttf|svg|ico)(\?\S*)?$/,
-			  	loader: 'url?limit=100000&name=[name].[ext]'
-			}	
+			{ test: /\.png|jpg$/, loader: 'url-loader?name=assets/images/[name].[ext]'},
+			{ test: /\.scss$/, loaders: ["style", "css", "sass"] },
+			{ test: /\.(eot|gif|woff|woff2|ttf|svg|ico)(\?\S*)?$/, loader: 'url?limit=100000&name=[name].[ext]'}	
 		],
 		noParse: [	
 			/jquery\.min\.js$/,
@@ -85,7 +78,7 @@ const config = {
 				favicon: './src/assets/images/icons/webcom_logo.ico'
 			}
 		),
-		new webpack.optimize.CommonsChunkPlugin('ext', 'ext.bundle.js', Infinity),
+		new webpack.optimize.CommonsChunkPlugin('ext', 'ext.bundle.js'),
 		new webpack.DefinePlugin({
 			__WEBCOM_SERVER__: JSON.stringify(process.env.WS_SERVER || 'https://webcom.orange.com'),
 			__NAMESPACE__: JSON.stringify(process.env.NAMESPACE || 'legorange')
