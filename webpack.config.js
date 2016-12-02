@@ -3,49 +3,48 @@ const process = require('process');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 const config = {
 	entry: {
-		ext: [
+		'vendor': [
 				 'imports?exports=>false&module=>false!jquery',
-				 'mouse',
-				 'widgets',
-				 'draggable',
-				 'touch-punch',
-				 'font-awesome',
-				 'touchswipe',
 				 'foundation',
+				 'imports?exports=>false&module=>false!webcom',
+				 'font-awesome',	 
 				 'imports?this=>window!jq-mobile',
-				 'jq-mobile-css',
 				 'jq-confirm',
+				 'jq-mobile-css',
 				 'jq-confirm-css',
-				 'imports?exports=>false&module=>false!webcom'
+				 'jquery-ui',
+				 'jq-qrcode',
+				 'touch-punch'			 
 		],
-		app: [
+		'app': [
 			'file?name=manifest.json!./manifest.json',
 			'./src/script.js']
 	},
 	output: {
 		filename: 'bundle.js',
-		path: path.join(__dirname, './dist/')
+		path: path.join(__dirname, './dist/'),
+		publicPath: process.env.PUBLIC_PATH || '/'
 	},
 	resolve: {
     	root: __dirname,
         alias: {
-        	jquery: 'jquery/dist/jquery.min.js',
-        	'draggable' : 'jquery-ui/ui/widgets/draggable.js',
-        	'widgets' : 'jquery-ui/ui/widget.js',
-        	'mouse' : 'jquery-ui/ui/widgets/mouse.js',
+        	'jquery': 'jquery/dist/jquery.min.js',
+        	'jquery-ui' : 'jquery-ui-bundle/jquery-ui.min.js',
         	'touch-punch' : 'jquery-ui-touch-punch/jquery.ui.touch-punch.min.js',
-        	'touchswipe' : 'jquery-touchswipe/jquery.touchSwipe.min.js',
+    		'foundation' : 'foundation-sites/dist/foundation.min.js',
 			'jq-mobile' : 'jquery-mobile/dist/jquery.mobile.min.js',
 			'jq-mobile-css' : 'jquery-mobile/dist/jquery.mobile.min.css',
 			'jq-confirm' : 'jquery-confirm/dist/jquery-confirm.min.js',
 			'jq-confirm-css' : 'jquery-confirm/dist/jquery-confirm.min.css',
-        	'webcom': 'webcom/webcom.js',
+			'jq-qrcode' : 'jquery.qrcode/jquery.qrcode.min.js',
 			'font-awesome': 'font-awesome/css/font-awesome.min.css',
-			'foundation' : 'foundation-sites/dist/foundation.min.js'
+			'webcom': 'webcom/webcom.js'
         },
         extensions: ["", ".webpack.js", ".web.js", ".js", ".css", ".min.css", ".scss"],
         modulesDirectories: ["node_modules"]
@@ -53,12 +52,17 @@ const config = {
 	module: {
 		loaders: [
 			//{ test: /\.png$/, loader: 'url-loader?mimetype=image/png'},
-			{ test: /\.png|jpg$/, loader: 'url-loader?name=assets/images/[name].[ext]'},
+			{ test: /\.png$/, loader: 'url-loader?name=assets/images/[name].[ext]'},
 			{ test: /\.scss$/, loaders: ["style", "css", "sass"] },
-			{ test: /\.(eot|gif|woff|woff2|ttf|svg|ico)(\?\S*)?$/, loader: 'url?limit=100000&name=[name].[ext]'}	
+			{ test: /\.(eot|gif|woff|woff2|ttf|svg|ico)(\?\S*)?$/, loader: 'url?limit=100000&name=assets/[name].[ext]'}	
 		],
 		noParse: [	
-			/jquery\.min\.js$/,
+		    /jquery.*\.min\.js$/,
+			/jquery.min.js/,
+			/jquery-ui.min.js/,
+			/jquery.ui.touch-punch.min.js/,
+			/jquery.mobile.min.js/,
+			/jquery-confirm.min.js/,
 			/webcom\.js$/
 		]
 	},
@@ -67,18 +71,15 @@ const config = {
     				   path.resolve(__dirname, "node_modules/motion-ui")]
   	},
 	plugins: [
-		new webpack.ProvidePlugin({
-			$: 'jquery',
-			jQuery: 'jquery'
-		}),
 		new HtmlWebpackPlugin(
 			{
 				template: './src/index.html',
 				inject: 'body',
-				favicon: './src/assets/images/icons/webcom_logo.ico'
+				favicon: './assets/images/icons/webcom_logo.ico'
 			}
 		),
-		new webpack.optimize.CommonsChunkPlugin('ext', 'ext.bundle.js'),
+		new CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js', minChunks: Infinity }),
+		new CopyWebpackPlugin([{ from: 'assets/images/icons', to: 'assets/images' }]),
 		new webpack.DefinePlugin({
 			__WEBCOM_SERVER__: JSON.stringify(process.env.WS_SERVER || 'https://webcom.orange.com'),
 			__NAMESPACE__: JSON.stringify(process.env.NAMESPACE || 'legorange')
@@ -89,7 +90,7 @@ const config = {
 };
 
 if (process.env.NODE_ENV !== 'production') {
-	config.entry.ext = config.entry.ext.concat([
+	config.entry.vendor = config.entry.vendor.concat([
 		'./hotReload',
 		'webpack/hot/dev-server'
 	]);
