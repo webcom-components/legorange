@@ -1,6 +1,5 @@
 /*                ORIGINAL WebApp
  https://io.datasync.orange.com/samples/legorange/ */
-// require('jquery-qrcode');
 require('../assets/styles/app.scss');
 require('../assets/styles/style.css');
 

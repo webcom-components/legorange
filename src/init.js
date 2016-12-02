@@ -22,6 +22,7 @@ module.exports.detectDevice = function() {
     //offCanvas.addClass('reveal-for-large');
     //$('#btn_panel').hide();
     //$('#btn_dezoom').removeClass('button');
+  $('.qrcode').css('display','none');
 console.log('mobile');
     return 1;
   } else {
