@@ -1,14 +1,13 @@
 /*                ORIGINAL WebApp
  https://io.datasync.orange.com/samples/legorange/ */
+// require('jquery-qrcode');
+require('../assets/styles/app.scss');
+require('../assets/styles/style.css');
 
 
-require('./assets/styles/app.scss');
-require('./assets/styles/style.css');
-
-
-var webcom = require('./assets/js/webcom_fct.js'),
-    init   = require('./assets/js/init.js'),
-    ev     = require('./assets/js/events.js');
+var webcom = require('./webcom_fct.js'),
+    init   = require('./init.js'),
+    ev     = require('./events.js');
     
 
 var drawspace = $(".drawspace"),
@@ -39,6 +38,8 @@ $(window).on('beforeunload', function(){
   //   e.stopPropagation();
   //   e.preventDefault();
   // });
+
+
 
 $(window).on("load", function (){
 
@@ -242,7 +243,6 @@ function globalInit() {
   var menutitle = $('.top-bar-title').height();
   var margin_menuicon = ($('.topbar').height() - btn_menuicon)/2;
   var margin_menutitle = ($('.topbar').height() - menutitle)/2;
-  console.log(topHeight, btn_menuicon, margin_menuicon);
   $('.menu-icon').css('margin-top', margin_menuicon +'px');
   $('.top-bar-title').css('margin-top', margin_menutitle +'px');
   $('.ui-page-theme-a').css('text-shadow', '0 0 0');
@@ -263,6 +263,7 @@ function globalInit() {
   } else {
     transcale(0, 0, 1);
     $('#overlayPanel').panel('open');
+    $('.qrcode').qrcode({text:'https://simonbaumannpro.github.io/legorange3.0/', width: 200, height:200 });
   }
 }
 
