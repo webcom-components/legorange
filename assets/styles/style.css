@@ -265,6 +265,24 @@ hr{
     color: #ff7900;
 }
 
+.webcomLink {
+    font-size: 16px; 
+    text-align: 'center'; 
+    text-decoration: underline;
+    color: #FF4500 !important;
+}
+
+.qrcode {
+    width: 214px;
+    height: 240px;
+    padding: 5px;
+    font-size: 15.5px;
+    font-weight: bold;
+    margin-top: 35px !important;
+    margin:auto;
+    background-color: white;
+}
+
 .menu-title {
     height: 77.778px;
     font-size: 28px;
