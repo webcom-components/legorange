@@ -1,4 +1,4 @@
-# LegOrange 2.0
+# LegOrange 3.0
 
 [![Build Status](https://travis-ci.org/SimonBaumannPro/LegOrange.svg?branch=master)](https://travis-ci.org/SimonBaumannPro/legorange2.0)
 [![Code Climate](https://codeclimate.com/github/SimonBaumannPro/legorange2.0/badges/gpa.svg)](https://codeclimate.com/github/SimonBaumannPro/legorange2.0)

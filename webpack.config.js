@@ -47,12 +47,12 @@ const config = {
 			'webcom': 'webcom/webcom.js'
         },
         extensions: ["", ".webpack.js", ".web.js", ".js", ".css", ".min.css", ".scss"],
-        modulesDirectories: ["node_modules"]
+        modulesDirectories: ["node_modules", "assets"]
     },
 	module: {
 		loaders: [
-			//{ test: /\.png$/, loader: 'url-loader?mimetype=image/png'},
-			{ test: /\.png$/, loader: 'url-loader?name=assets/images/[name].[ext]'},
+			{ test: /\.(jpe?g|png)$/, loader: 'url-loader?name=assets/images/[name].[ext]',
+			  exclude: '/node_modules/'},
 			{ test: /\.scss$/, loaders: ["style", "css", "sass"] },
 			{ test: /\.(eot|gif|woff|woff2|ttf|svg|ico)(\?\S*)?$/, loader: 'url?limit=100000&name=assets/[name].[ext]'}	
 		],

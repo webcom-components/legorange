@@ -17,13 +17,8 @@ if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgen
 /* Détecte si l'application est utilisé sur mobile/tablettes ou PC */
 module.exports.detectDevice = function() {
   if (is_mobile || (isMobile && is_firefox)) {
-    //$('body').css('position', 'absolute');
-    //$('body').css('overflow', 'auto');
-    //offCanvas.addClass('reveal-for-large');
-    //$('#btn_panel').hide();
-    //$('#btn_dezoom').removeClass('button');
-  $('.qrcode').css('display','none');
-console.log('mobile');
+    $('.qrcode').css('display','none');
+    console.log('mobile');
     return 1;
   } else {
     $('#DT').attr('aria-expanded', 'true');

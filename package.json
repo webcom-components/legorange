@@ -1,7 +1,7 @@
 {
   "name": "legorange3.0",
   "version": "3.0.0",
-  "description": "Application LegOrange using webcom",
+  "description": "Application Legorange using webcom",
   "main": "",
   "scripts": {
     "start": "webpack-dev-server --hot --host 0.0.0.0",
