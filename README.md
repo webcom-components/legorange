@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/SimonBaumannPro/legorange3.0.svg?branch=master)](https://travis-ci.org/SimonBaumannPro/legorange3.0)
 [![Code Climate](https://codeclimate.com/github/SimonBaumannPro/legorange3.0/badges/gpa.svg)](https://codeclimate.com/github/SimonBaumannPro/legorange3.0)
-[![Test Coverage](https://codeclimate.com/github/SimonBaumannPro/legorange3.0/badges/coverage.svg)](https://codeclimate.com/github/SimonBaumannPro/legorange3.0/coverage)
 [![dependencies Status](https://david-dm.org/SimonBaumannPro/legorange3.0/status.svg)](https://david-dm.org/SimonBaumannPro/legorange3.0)
 [![devDependencies Status](https://david-dm.org/SimonBaumannPro/legorange3.0/dev-status.svg)](https://david-dm.org/SimonBaumannPro/legorange3.0?type=dev)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
