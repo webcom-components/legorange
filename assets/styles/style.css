@@ -107,7 +107,7 @@ html,body {
 }
 
 hr{
-    margin:0px;
+    margin:0;
 }
   
 .baseplate {
@@ -120,24 +120,14 @@ hr{
     cursor: pointer;
     width: 30px;
     height: 30px;
-    /*margin-right: 10px;
-    margin-left: 10px; */
     position: absolute;
     z-index: 1;
-    /*border-radius: 20px;*/
-    /* background: url('../images/bricks/whiteBrick.png') no-repeat; */
     background-size: 30px 30px;
-    /*background-blend-mode: multiply;    /*pour l'affichage des briques en couleur*/ 
-    /*outline: 2px solid black;*/
 }
 
 .white {
 	background: url('../images/bricks/whiteBrick.png');
     background-size: 30px 30px;
-}
-
-.black {
-    background-color: #666;
 }
 
 .blue {
@@ -184,8 +174,8 @@ hr{
 
 .ul-drawTools {
     height:200px;
-    margin-left:0px!important;
-    padding-top:0px!important;
+    margin-left: 0 !important;
+    padding-top: 0 !important;
 }
 
 .container-titlebar {
