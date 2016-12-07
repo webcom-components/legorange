@@ -1,19 +1,10 @@
-var main   = require('./script.js'),
-	webcom = require('./webcom_fct.js');
-	init   = require('./init.js');
-
-var mode = main.mode,
+var mode = "draw",
 	color = "white",
 	panel = $('#overlayPanel'),
 	drawspace = $('.drawspace');
 
+module.exports.mode = mode;
 module.exports.color = color;
-
-
-module.exports.dezoom = function() {
-
-};
-
 
 module.exports.disableScroll = function(sc) {
 	if (panel.hasClass('ui-panel-open') === false) {
@@ -34,20 +25,18 @@ module.exports.change_mode = function(new_mode) {
 	if (new_mode=="draw" || new_mode=="eraseAll") {
 	    $(".ul-drawTools").attr("style", "height: 200px");
 	    $(".drawTools-buttons-container").css("height", "50%");
-	    // $("#erase"+" :nth-child(1)").removeClass("fa-square").addClass("fa-square-o");
-	    // $("#draw"+" :nth-child(1)").removeClass("fa-square-o").addClass("fa-square");
 	    $(".color-container").show();
   	}
   	else {
 	    $(".ul-drawTools").attr("style", "height: 100px");
 	    $(".drawTools-buttons-container").css("height", "100%");
-	    // $("#erase"+" :nth-child(1)").removeClass("fa-square-o").addClass("fa-square");
-	    // $("#draw"+" :nth-child(1)").removeClass("fa-square").addClass("fa-square-o");
 	    $(".color-list").hide();      
   	}
+  	module.exports.mode = new_mode;
   	return new_mode;
 };
 
+// Hide the color section
 module.exports.hide_colors = function() {
 	if (mode == "erase") {
 	    $(".ul-drawTools").attr("style", "height: 100px");
@@ -56,6 +45,7 @@ module.exports.hide_colors = function() {
     }
 };
 
+// Highlight the active color inside the color section
 module.exports.color_active = function(elem) {
 	$(".brickMenu").removeClass("active");
 	elem.addClass("active");

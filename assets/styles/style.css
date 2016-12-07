@@ -53,7 +53,7 @@ html,body {
     padding: 0;
     background: url('../images/bricks/orangeBrick.png') repeat;
     z-index: 0;
-    transform-origin: 0 0 0; /* pour que les transfo se fassent toujours à partir du point (0,0)*/
+    transform-origin: 0 0 0;/* (0,0) is the start point to make transform */
 }
 
 .brick {
@@ -63,8 +63,6 @@ html,body {
     position: absolute;
     z-index: 2;
     background: url('../images/bricks/orangeBrick.png') no-repeat;
-    /*background-blend-mode: multiply;    /*pour l'affichage des briques en couleur */
-    /*outline: 2px solid black;*/
 }
 
 .zoomspace {

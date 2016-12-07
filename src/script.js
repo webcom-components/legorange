@@ -16,7 +16,6 @@ var drawspace = $(".drawspace"),
     panel = $('#overlayPanel'),
     mode = "draw",
     topHeight,
-    last_move="",
     smartphone,
     scale = 0.5;
 
@@ -68,7 +67,7 @@ $(window).on("load", function (){
 
           // Disable brick overflow outside drawspace
           if (new_move!=last_move && e.pageX < drawspace.width() && e.pageY < (drawspace.height() + topHeight) && e.pageX > 0 && e.pageY > 0) {
-            webcom.updatePos(x,y);
+            webcom.updatePos(x, y, mode);
           }
           last_move=new_move;
         },
