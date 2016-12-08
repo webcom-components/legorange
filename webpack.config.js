@@ -52,7 +52,7 @@ const config = {
 	module: {
 		loaders: [
 			{ test: /\.(jpe?g|png)$/, loader: 'url-loader?name=assets/images/[name].[ext]', exclude: '/node_modules/'},
-			{ test: /\.png|jpg$/, loader: 'file-loader?name=assets/images/[name].[ext]', exclude: '/node_modules/'},
+			// { test: /\.png|jpg$/, loader: 'file-loader?name=assets/images/[name].[ext]', exclude: '/node_modules/'},
 			{ test: /\.scss$/, loaders: ["style", "css", "sass"] },
 			{ test: /\.(eot|gif|woff|woff2|ttf|svg|ico)(\?\S*)?$/, loader: 'url?limit=100000&name=assets/[name].[ext]'}	
 		],
