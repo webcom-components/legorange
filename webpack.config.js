@@ -51,8 +51,8 @@ const config = {
     },
 	module: {
 		loaders: [
-			{ test: /\.(jpe?g|png)$/, loader: 'url-loader?name=assets/images/[name].[ext]', exclude: '/node_modules/'},
-			// { test: /\.png|jpg$/, loader: 'file-loader?name=assets/images/[name].[ext]', exclude: '/node_modules/'},
+			//{ test: /\.(jpe?g|png)$/, loader: 'url?name=assets/images/[name].[ext]', exclude: '/node_modules/'},
+			{ test: /\.png|jpg$/, loader: 'file?name=/assets/images/[name].[ext]', exclude: '/node_modules/'},
 			{ test: /\.scss$/, loaders: ["style", "css", "sass"] },
 			{ test: /\.(eot|gif|woff|woff2|ttf|svg|ico)(\?\S*)?$/, loader: 'url?limit=100000&name=assets/[name].[ext]'}	
 		],
@@ -79,7 +79,8 @@ const config = {
 			}
 		),
 		new CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js', minChunks: Infinity }),
-		new CopyWebpackPlugin([{ from: 'assets/images/icons', to: 'assets/images' }]),
+		new CopyWebpackPlugin([{ from: 'assets/images/icons', to: 'assets/images' },
+							   { from: 'assets/images/bricks', to: 'assets/images'}]),
 		new webpack.DefinePlugin({
 			__WEBCOM_SERVER__: JSON.stringify(process.env.WS_SERVER || 'https://webcom.orange.com'),
 			__NAMESPACE__: JSON.stringify(process.env.NAMESPACE || 'legorange')

@@ -3,6 +3,13 @@
 require('../assets/styles/app.scss');
 require('../assets/styles/style.css');
 
+require('../assets/images/icons/icon-128x128.png');
+require('../assets/images/icons/icon-144x144.png');
+require('../assets/images/icons/icon-152x152.png');
+require('../assets/images/icons/icon-192x192.png');
+require('../assets/images/icons/icon-72x72.png');
+require('../assets/images/icons/icon-96x96.png');
+require('../assets/images/bricks/orangeBrick.png');
 
 var webcom = require('./webcom_fct.js'),
     init   = require('./init.js'),

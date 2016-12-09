@@ -1,5 +1,4 @@
 /* All these functions are based on webcom.js */
-
 var ev = require('./events.js');
 
 var webcom_url=__WEBCOM_SERVER__+"/base/"+__NAMESPACE__,
