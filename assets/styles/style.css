@@ -75,8 +75,8 @@ html,body {
 
 .dezoom {
     z-index: 3;
-    width: 100px !important;
-    height: 100px !important;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin: 0 0 1rem 0;
     background: url('../images/icons/zoom_icon.png') no-repeat;
@@ -91,15 +91,16 @@ html,body {
 .logo_webcom {
     width: 30px;
     height: 30px;
-    content: url('../images/icons/logo_webcom.png') no-repeat;
     background: url('../images/icons/logo_webcom.png') no-repeat;
     background-size: 100% 100%;
-    border : 1px solid white !important;
+    display: inline-block;
 }
 
-.logo_txt {
+.logo_txt { 
     font-family: HelvNeue75;
+    color:white;
     font-size: 20px;
+    margin-left: 3px;
     vertical-align: middle;
     display: inline-block!important;
 }
@@ -260,15 +261,16 @@ hr{
     color: #FF4500 !important;
 }
 
-.qrcode {
-    width: 214px;
-    height: 240px;
-    padding: 5px;
-    font-size: 15.5px;
-    font-weight: bold;
-    margin-top: 35px !important;
-    margin:auto;
+.qrcode canvas {
+    margin-left: 41px;
+    margin-top: 2rem;
+    padding : 0.5rem;
     background-color: white;
+}
+
+.top-bar-title {
+    display: flex;
+    margin-left: 5px;
 }
 
 .menu-title {
@@ -309,9 +311,31 @@ hr{
 }
 
 
+.tablet .dezoom { /* Do not work ... */
+    width: 140px;
+    height: 140px;
+}
+.tablet .topbar {
+  height:8vh;
+}
+.tablet .logo_txt {
+  font-size: 28px;
+}
+.tablet .logo_webcom {
+  height:40px;
+  width:40px;
+}
+.tablet .menu-icon {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transforms: scale(1.5);
+    margin-right: 13px;
+}
+
+
 @media screen and (min-device-width: 320px) and (max-device-width: 369px) {
 
-    .logo_txt { font-size: 14px; }
+    .logo_txt { font-size: 20px; }
 
     .topbar {
         height: 10vh;
@@ -327,8 +351,11 @@ hr{
 }
 
 @media screen and (min-device-width: 370px ) and (max-device-width: 429px)  {
-    .logo_txt { font-size: 17px; }
+    .logo_txt { font-size: 22px; }
 
+    .logo_webcom { width: 35px;
+                   height: 35px;
+    }
     .topbar {
         height: 10vh;
         padding: 2.5vh;

@@ -26,6 +26,8 @@ var drawspace = $(".drawspace"),
     smartphone,
     scale = 0.5;
 
+
+
 module.exports.mode = mode;
 
 var bricksize = webcom.bricksize;
@@ -41,6 +43,10 @@ $(window).on("load", function (){
 
   // Initialisation du contexte global
   globalInit();
+
+
+
+
 
   // drawspace scale from 1 to 0.5
   btn_dezoom.on('click', function(){
@@ -170,8 +176,6 @@ function globalInit() {
 
   $("div").removeClass('ui-panel-dismiss');
   $('a').removeClass('ui-link');
-
-  btn_dezoom.removeClass().addClass('dezoom');
 
   // = 1 si mobile, 0 sinon
   smartphone = init.detectDevice();
