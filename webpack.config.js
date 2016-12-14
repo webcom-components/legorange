@@ -20,7 +20,8 @@ const config = {
 				 'jq-confirm-css',
 				 'jquery-ui',
 				 'jq-qrcode',
-				 'touch-punch'			 
+				 'touch-punch',
+				 'mobile-detect'			 
 		],
 		'app': [
 			'file?name=manifest.json!./manifest.json',
@@ -44,6 +45,7 @@ const config = {
 			'jq-confirm-css' : 'jquery-confirm/dist/jquery-confirm.min.css',
 			'jq-qrcode' : 'jquery.qrcode/jquery.qrcode.min.js',
 			'font-awesome': 'font-awesome/css/font-awesome.min.css',
+			'mobile-detect': 'mobile-detect/mobile-detect.min.js',
 			'webcom': 'webcom/webcom.js'
         },
         extensions: ["", ".webpack.js", ".web.js", ".js", ".css", ".min.css", ".scss"],
@@ -51,18 +53,13 @@ const config = {
     },
 	module: {
 		loaders: [
-			//{ test: /\.(jpe?g|png)$/, loader: 'url?name=assets/images/[name].[ext]', exclude: '/node_modules/'},
-			{ test: /\.png|jpg$/, loader: 'file?name=/assets/images/[name].[ext]', exclude: '/node_modules/'},
+			{ test: /\.(jpe?g|png)$/, loader: 'url?name=assets/images/[name].[ext]', exclude: '/node_modules/'},
+			//{ test: /\.png|jpg$/, loader: 'file?name=assets/images/[name].[ext]', exclude: '/node_modules/'},
 			{ test: /\.scss$/, loaders: ["style", "css", "sass"] },
 			{ test: /\.(eot|gif|woff|woff2|ttf|svg|ico)(\?\S*)?$/, loader: 'url?limit=100000&name=assets/[name].[ext]'}	
 		],
 		noParse: [	
 		    /jquery.*\.min\.js$/,
-			/jquery.min.js/,
-			/jquery-ui.min.js/,
-			/jquery.ui.touch-punch.min.js/,
-			/jquery.mobile.min.js/,
-			/jquery-confirm.min.js/,
 			/webcom\.js$/
 		]
 	},
