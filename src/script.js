@@ -151,7 +151,7 @@ function transcale (x, y, sc) {
     $('div[data-role="main"]').height(4980);
     $('div[data-role="main"]').width(4980);
   }
-  document.querySelector('meta[name=viewport]').setAttribute('content', "width=device-width, height=device-height, initial-scale=1, user-scalable=no");
+  // document.querySelector('meta[name=viewport]').setAttribute('content', "width=device-width, height=device-height, initial-scale=1, user-scalable=no");
   $('body').scrollLeft(x);
   $('body').scrollTop(y);
 }

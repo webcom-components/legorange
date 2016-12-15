@@ -12,6 +12,8 @@ var mobile = md.mobile(),
     tablet = md.tablet(),
     os = md.os();
 
+
+
 console.log( md.mobile() );          // 'Sony'
 console.log( md.phone() );           // 'Sony'
 console.log( md.tablet() );          // null
@@ -20,6 +22,13 @@ console.log( md.os() );              // 'AndroidOS'
 console.log( md.is('iPhone') );      // false
 
 // $('#btn_dezoom').removeClass().addClass('dezoom');
+
+
+
+// $('body').on('scrollstart', function(e) {
+//         e.preventDefault();
+// }, false);
+
 
 if (tablet) {
   console.log('tabletttttt');
@@ -31,6 +40,20 @@ if (is_IE){
   console.log("IE");
   $(".colors").css('padding-top','22px');
 }
+
+if (os === 'iOS') {
+  document.querySelector('meta[name=viewport]').setAttribute('content', "width=device-width, height=device-height, initial-scale=1, user-scalable=no");
+  // $('.drawspace').draggable({
+  //   containment: "window"
+  //   cursor: "crosshair"
+  // });
+} else {
+  console.log('minui');
+  document.querySelector('meta[name=viewport]').setAttribute('content', "width=device-width, height=device-height, initial-scale=1, user-scalable=no, minimal-ui");
+}
+
+module.exports.mobile = mobile;
+module.exports.os = os;
 
 // Detect if the app is running on mobile/tablet or computer 
 module.exports.detectDevice = function() {

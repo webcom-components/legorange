@@ -316,7 +316,7 @@ hr{
     height: 140px;
 }
 .tablet .topbar {
-  height:8vh;
+  display: none;
 }
 .tablet .logo_txt {
   font-size: 28px;
@@ -338,7 +338,7 @@ hr{
     .logo_txt { font-size: 20px; }
 
     .topbar {
-        height: 10vh;
+        height: 8vh;
         padding: 1.5vh;
     }
     .menu-icon {
@@ -357,7 +357,7 @@ hr{
                    height: 35px;
     }
     .topbar {
-        height: 10vh;
+        height: 8vh;
         padding: 2.5vh;
     }
     .menu-icon {
@@ -382,7 +382,7 @@ hr{
     }
 
     .topbar {
-        height: 10vh;
+        height: 13vh;
         padding: 2.5vh;
     }
     .menu-icon {
