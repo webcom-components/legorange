@@ -53,6 +53,7 @@ html,body {
     padding: 0;
     background: url('../images/bricks/orangeBrick.png') repeat;
     z-index: 0;
+    -webkit-overflow-scrolling: touch;
     transform-origin: 0 0 0;/* (0,0) is the start point to make transform */
 }
 
