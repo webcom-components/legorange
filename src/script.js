@@ -44,10 +44,6 @@ $(window).on("load", function (){
   // Initialisation du contexte global
   globalInit();
 
-
-
-
-
   // drawspace scale from 1 to 0.5
   btn_dezoom.on('click', function(){
     var offX, offY, scale; 
@@ -67,12 +63,12 @@ $(window).on("load", function (){
   drawspace.on('mousedown', function(e){
     if (smartphone === 0) {
       if (e.defaultPrevented ) return;
-
       var new_move,
           last_move="",
           handlers = {
         mousemove : function(e){
           if (e.defaultPrevented ) return;
+          console.log('pageY= '+e.pageY +'     offset= '+ drawspace.offset().top);
           x=parseInt((e.pageX - drawspace.offset().left) / bricksize);
           y=parseInt((e.pageY - drawspace.offset().top) / bricksize);
 
@@ -83,6 +79,7 @@ $(window).on("load", function (){
             webcom.updatePos(x, y, mode);
           }
           last_move=new_move;
+          console.log('last_move= '+last_move);
         },
         mouseup : function(e){
           $(this).off(handlers);   
@@ -97,6 +94,27 @@ $(window).on("load", function (){
     var x,y;
     var clickX = e.pageX;
     var clickY = e.pageY;
+
+
+var topDoc  = window.pageYOffset || document.documentElement.scrollTop,
+    leftDoc = window.pageXOffset || document.documentElement.scrollLeft;
+
+var topDraw  = $('.drawspace').scrollTop(),
+    leftDraw = $('.drawspace').scrollLeft();    
+
+var topBody  = $('body').scrollTop(),
+    leftBody = $('body').scrollLeft(); 
+
+var topHtml  = $('html').scrollTop(),
+    leftHtml = $('html').scrollLeft();
+
+console.log('topDoc= '+topDoc+' - leftDoc= '+leftDoc);
+console.log('topDraw= '+topDraw+' - leftDraw= '+leftDraw);
+console.log('topBody= '+topBody+' - leftBody= '+leftBody);
+console.log('topHtml= '+topHtml+' - leftHtml= '+leftHtml);
+
+
+
 
     // mobile device == false
     if (smartphone === 0) {

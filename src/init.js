@@ -7,6 +7,8 @@ var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 var is_IE = navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv 11/));
 var md = new MobileDetect(window.navigator.userAgent);
 
+var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
 var mobile = md.mobile(),
     phone = md.phone(),
     tablet = md.tablet(),
@@ -42,12 +44,19 @@ if (is_IE){
 }
 
 if (os === 'iOS') {
+  if (mobile === 'iPhone') {
+      $('.topbar').css('width', width);
+  }
+  $('.drawspace').on('touchmove', function(e){
+    console.log('touchmove');
+    //e.preventDefault();
+  });
   document.querySelector('meta[name=viewport]').setAttribute('content', "width=device-width, height=device-height, initial-scale=1, user-scalable=no");
   $('.drawspace').css('overflow','scroll');
   // $('.drawspace').draggable({
   //   containment: "window"
   //   cursor: "crosshair"
-  // });
+  // }); 
 } else {
   console.log('minui');
   document.querySelector('meta[name=viewport]').setAttribute('content', "width=device-width, height=device-height, initial-scale=1, user-scalable=no, minimal-ui");
