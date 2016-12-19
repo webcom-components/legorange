@@ -13,20 +13,13 @@ var webcom_url=__WEBCOM_SERVER__+"/base/"+__NAMESPACE__,
 
 module.exports.eraseAll = function() {
 	$.confirm({
-    	icon: 'fa fa-warning',
-      closeIcon:true,
-      title: 'Warning !',
-    	content : 'Remove all bricks ?',
-      buttons: {
-        Okay: {
-            action: function () {
-              legobase.child(domain).remove();
-            }
-        },
-        Cancel: {
-            action: function () {
-            }
-        }
+    icon: 'fa fa-warning',
+    closeIcon:true,
+    title: 'Warning !',
+    content : 'Remove all bricks ?',
+    buttons: {
+      Okay: { action: function () { legobase.child(domain).remove(); } },
+      Cancel: { action: function () {} }
     } 	
 	});
 };
@@ -74,18 +67,9 @@ module.exports.updatePos = function(x, y) {
   brick.once("value", function(currentData) {
   	color = ev.color;
   	mode = ev.mode;
-    if (currentData.val() === null) {
-      // no brick = we add a new colored brick
-      if (mode === "draw" || mode === "eraseAll") 
-        brick.set({color: color, x: x, y: y, uid: authData.uid});
-    } else {
-      // brick already exists at x,y
-      // in "erase" mode, remove the brick
-      if (mode === "erase")
-        brick.set(null);
-      // in "draw" mode, edit the brick and warn the backend
-      if (mode === "draw" || mode === "eraseAll") // && currentData.color != color) 
-        brick.set({color: color, x: x, y: y, uid: authData.uid});
-    }
+    if (mode === "draw" || mode === "eraseAll") {
+      brick.set({color: color, x: x, y: y, uid: authData.uid});
+    } else if (currentData.val() != null)
+      brick.set(null);
   });
 };
