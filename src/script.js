@@ -108,10 +108,10 @@ var topBody  = $('body').scrollTop(),
 var topHtml  = $('html').scrollTop(),
     leftHtml = $('html').scrollLeft();
 
-console.log('topDoc= '+topDoc+' - leftDoc= '+leftDoc);
-console.log('topDraw= '+topDraw+' - leftDraw= '+leftDraw);
-console.log('topBody= '+topBody+' - leftBody= '+leftBody);
-console.log('topHtml= '+topHtml+' - leftHtml= '+leftHtml);
+// console.log('topDoc= '+topDoc+' - leftDoc= '+leftDoc);
+// console.log('topDraw= '+topDraw+' - leftDraw= '+leftDraw);
+// console.log('topBody= '+topBody+' - leftBody= '+leftBody);
+// console.log('topHtml= '+topHtml+' - leftHtml= '+leftHtml);
 
 
 

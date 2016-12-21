@@ -44,10 +44,11 @@ if (is_IE){
 
 if (os === 'iOS') {
   if (mobile === 'iPhone') {
+    console.log('iphone ' + width);
       $('.topbar').css('width', width);
+      $('body').css('-webkit-overflow-scrolling','touch').css('overflow-y','scroll');
   }
   $('.drawspace').on('touchmove', function(e){
-    console.log('touchmove');
     //e.preventDefault();
   });
   document.querySelector('meta[name=viewport]').setAttribute('content', "width=device-width, height=device-height, initial-scale=1, user-scalable=no");
