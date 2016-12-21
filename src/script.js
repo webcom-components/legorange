@@ -95,26 +95,22 @@ $(window).on("load", function (){
     var clickX = e.pageX;
     var clickY = e.pageY;
 
+    var topDoc  = window.pageYOffset || document.documentElement.scrollTop,
+        leftDoc = window.pageXOffset || document.documentElement.scrollLeft;
 
-var topDoc  = window.pageYOffset || document.documentElement.scrollTop,
-    leftDoc = window.pageXOffset || document.documentElement.scrollLeft;
+    var topDraw  = $('.drawspace').scrollTop(),
+        leftDraw = $('.drawspace').scrollLeft();    
 
-var topDraw  = $('.drawspace').scrollTop(),
-    leftDraw = $('.drawspace').scrollLeft();    
+    var topBody  = $('body').scrollTop(),
+        leftBody = $('body').scrollLeft(); 
 
-var topBody  = $('body').scrollTop(),
-    leftBody = $('body').scrollLeft(); 
-
-var topHtml  = $('html').scrollTop(),
-    leftHtml = $('html').scrollLeft();
+    var topHtml  = $('html').scrollTop(),
+        leftHtml = $('html').scrollLeft();
 
 // console.log('topDoc= '+topDoc+' - leftDoc= '+leftDoc);
 // console.log('topDraw= '+topDraw+' - leftDraw= '+leftDraw);
 // console.log('topBody= '+topBody+' - leftBody= '+leftBody);
 // console.log('topHtml= '+topHtml+' - leftHtml= '+leftHtml);
-
-
-
 
     // mobile device == false
     if (smartphone === 0) {
@@ -140,16 +136,19 @@ var topHtml  = $('html').scrollTop(),
 
           var scrollX,
               scrollY,
-              viewpWidth = window.innerWidth/3.5,
-              viewpHeight = window.innerHeight/3.5,
-              overflowX = e.clientX - viewpWidth,
-              overflowY = e.clientY - viewpHeight,
+              viewpWidth = parseInt(window.innerWidth/3.5),
+              viewpHeight = parseInt(window.innerHeight/3.5),
+              overflowX = parseInt(e.clientX - viewpWidth),
+              overflowY = parseInt(e.clientY - viewpHeight),
               offX = $('body').scrollLeft(),
-              offY = $('body').scrollTop() ;
+              offY = $('body').scrollTop();
 
           scrollX = (clickX + overflowX + offX)*2;
-          scrollY = (clickY + overflowY + offY)*2;    
-
+          scrollY = (clickY + overflowY + offY)*2;  
+console.log('viewpWidth= '+viewpWidth+' - viewpHeight= '+viewpHeight);
+console.log('overflowX= '+overflowX+' - overflowY= '+overflowY);  
+console.log('offX= '+offX+' - offY= '+offY);
+console.log('X= '+scrollX+' - Y= '+scrollY);
           btn_dezoom.show();
           transcale(scrollX, scrollY, scale);
         }
@@ -160,7 +159,6 @@ var topHtml  = $('html').scrollTop(),
 
 /* Effectue une translation et un scale sur le drawspace */
 function transcale (x, y, sc) {
-  console.log('transcale. scale = '+sc);
   drawspace.css('margin-top', topHeight);
   drawspace.css('transform', "scale(" + sc + ")");
   if (sc === 0.5) {

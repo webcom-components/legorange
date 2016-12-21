@@ -46,7 +46,7 @@ if (os === 'iOS') {
   if (mobile === 'iPhone') {
     console.log('iphone ' + width);
       $('.topbar').css('width', width);
-      $('body').css('-webkit-overflow-scrolling','touch').css('overflow-y','scroll');
+      $('body').css('position', 'absolute').css('overflow', 'scroll');
   }
   $('.drawspace').on('touchmove', function(e){
     //e.preventDefault();
@@ -69,6 +69,7 @@ module.exports.os = os;
 module.exports.detectDevice = function() {
   if (phone || tablet) {
     $('.qrcode').css('display','none');
+    $('.wrapper').css('height', '10px');
 
     // myScroll = new IScroll('.wrapper', {
     //   freeScroll: true,
