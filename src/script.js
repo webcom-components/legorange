@@ -11,10 +11,9 @@ require('../assets/images/icons/icon-72x72.png');
 require('../assets/images/icons/icon-96x96.png');
 require('../assets/images/bricks/orangeBrick.png');
 
-var webcom = require('./webcom_fct.js'),
-    init   = require('./init.js'),
-    ev     = require('./events.js');
-    
+var webcom  = require('./webcom_fct.js'),
+    init    = require('./init.js'),
+    ev      = require('./events.js');
 
 var drawspace = $(".drawspace"),
     btn_dezoom = $("#btn_dezoom"),
@@ -24,7 +23,8 @@ var drawspace = $(".drawspace"),
     mode = "draw",
     topHeight,
     smartphone,
-    scale = 0.5;
+    scale = 0.5,
+    myScroll;
 
 
 
@@ -160,6 +160,7 @@ console.log('topHtml= '+topHtml+' - leftHtml= '+leftHtml);
 
 /* Effectue une translation et un scale sur le drawspace */
 function transcale (x, y, sc) {
+  console.log('transcale. scale = '+sc);
   drawspace.css('margin-top', topHeight);
   drawspace.css('transform', "scale(" + sc + ")");
   if (sc === 0.5) {

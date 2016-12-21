@@ -1,6 +1,7 @@
 /* Functions allowing the global context to know the plateform and browser used */
 
-var MobileDetect = require('mobile-detect');
+var MobileDetect = require('mobile-detect'),
+    IScroll = require('iscroll');
 
 var size; // bricks size
 var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
@@ -13,8 +14,6 @@ var mobile = md.mobile(),
     phone = md.phone(),
     tablet = md.tablet(),
     os = md.os();
-
-
 
 console.log( md.mobile() );          // 'Sony'
 console.log( md.phone() );           // 'Sony'
@@ -69,6 +68,11 @@ module.exports.os = os;
 module.exports.detectDevice = function() {
   if (phone || tablet) {
     $('.qrcode').css('display','none');
+
+    // myScroll = new IScroll('.wrapper', {
+    //   freeScroll: true,
+    //   useTransform: false  // if not set : auto-zoom after pan
+    // });
     console.log('mobile');
     return 1;
   } else {

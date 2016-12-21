@@ -17,6 +17,11 @@ html,body {
     width: 100%;   
 }
 
+body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 .ui-page-theme-a .ui-panel .ui-overlay-a .ui-panel-wrapper {
     text-shadow: 0 0 0 !important;
 }
@@ -54,8 +59,7 @@ html,body {
     padding: 0;
     background: url('../images/bricks/orangeBrick.png') repeat;
     z-index: 0;
-    transform-origin: 0 0 0;/* (0,0) is the start point to make transform */
-    -webkit-overflow-scrolling: touch;
+    transform-origin: 0 0 0; /* (0,0) is the start point to make transform */
 }
 
 .brick {
