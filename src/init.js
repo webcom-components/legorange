@@ -46,7 +46,7 @@ if (os === 'iOS') {
   if (mobile === 'iPhone') {
     console.log('iphone ' + width);
       $('.topbar').css('width', width);
-      $('body').css('position', 'absolute').css('overflow', 'scroll');
+      $('body').css('overflow', 'scroll');
   }
   $('.drawspace').on('touchmove', function(e){
     //e.preventDefault();
@@ -69,12 +69,6 @@ module.exports.os = os;
 module.exports.detectDevice = function() {
   if (phone || tablet) {
     $('.qrcode').css('display','none');
-    $('.wrapper').css('height', '10px');
-
-    // myScroll = new IScroll('.wrapper', {
-    //   freeScroll: true,
-    //   useTransform: false  // if not set : auto-zoom after pan
-    // });
     console.log('mobile');
     return 1;
   } else {

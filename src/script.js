@@ -47,7 +47,7 @@ $(window).on("load", function (){
   // Initialisation du contexte global
   globalInit();
 
-$(window).on('orientationchange', ev.doOnOrientationChange());
+  $(window).on('orientationchange', ev.doOnOrientationChange());
 
 
   // Initial orientation check
