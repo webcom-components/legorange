@@ -21,8 +21,7 @@ const config = {
 				 'jquery-ui',
 				 'jq-qrcode',
 				 'touch-punch',
-				 'mobile-detect',
-				 'iscroll'		 
+				 'mobile-detect'	 
 		],
 		'app': [
 			'file?name=manifest.json!./manifest.json',
@@ -47,7 +46,6 @@ const config = {
 			'jq-qrcode' : 'jquery.qrcode/jquery.qrcode.min.js',
 			'font-awesome': 'font-awesome/css/font-awesome.min.css',
 			'mobile-detect': 'mobile-detect/mobile-detect.min.js',
-			'iscroll': 'iscroll/build/iscroll-lite.js',
 			'webcom': 'webcom/webcom.js'
         },
         extensions: ["", ".webpack.js", ".web.js", ".js", ".css", ".min.css", ".scss"],
