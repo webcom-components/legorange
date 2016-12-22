@@ -20,6 +20,20 @@ module.exports.disableScroll = function(sc) {
 	}
 };
 
+
+module.exports.doOnOrientationChange = function() {
+    switch(window.orientation) {  
+      case -90:
+      case 90:
+        $(window).trigger('resize');
+        console.log('orientationchanged');
+        $('#overlayPanel').css('position', 'fixed');
+        break; 
+      default:
+        break; 
+    }
+  };
+
 /* Manage the display mode in the off-canvas menue */
 module.exports.change_mode = function(new_mode) {
 	if (new_mode=="draw" || new_mode=="eraseAll") {

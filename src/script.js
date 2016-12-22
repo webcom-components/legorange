@@ -33,6 +33,8 @@ module.exports.mode = mode;
 var bricksize = webcom.bricksize;
 //var mode = webcom.mode;
 
+
+
 $(window).on('beforeunload', function(){
   $(window).scrollTop(0);
   $(window).scrollLeft(0);
@@ -41,8 +43,15 @@ $(window).on('beforeunload', function(){
 $(window).on("load", function (){
   $(document).foundation();
 
+
   // Initialisation du contexte global
   globalInit();
+
+$(window).on('orientationchange', ev.doOnOrientationChange());
+
+
+  // Initial orientation check
+  //ev.doOnOrientationChange();
 
   // drawspace scale from 1 to 0.5
   btn_dezoom.on('click', function(){

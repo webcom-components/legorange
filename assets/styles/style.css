@@ -334,7 +334,7 @@ hr{
 }
 
 
-@media screen and (min-device-width: 320px) and (max-device-width: 369px) {
+@media screen and (min-device-width: 320px) and (max-device-width: 369px) and (orientation: portrait) {
 
     .logo_txt { font-size: 20px; }
 
@@ -351,7 +351,7 @@ hr{
     }
 }
 
-@media screen and (min-device-width: 370px ) and (max-device-width: 429px)  {
+@media screen and (min-device-width: 370px ) and (max-device-width: 429px) and (orientation: portrait) {
     .logo_txt { font-size: 22px; }
 
     .logo_webcom { width: 35px;
@@ -374,7 +374,7 @@ hr{
 }
 
 
-@media screen and (min-device-width: 530px ) and (max-device-width: 600px)  {
+@media screen and (min-device-width: 530px ) and (max-device-width: 600px) and (orientation: portrait) {
     .logo_txt { font-size: 25px; }
 
     .logo_webcom {
