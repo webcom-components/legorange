@@ -1,10 +1,7 @@
-# LegOrange 3.0
+# legorange
 
-[![Build Status](https://travis-ci.org/SimonBaumannPro/legorange3.0.svg?branch=master)](https://travis-ci.org/SimonBaumannPro/legorange3.0)
-[![Code Climate](https://codeclimate.com/github/SimonBaumannPro/legorange3.0/badges/gpa.svg)](https://codeclimate.com/github/SimonBaumannPro/legorange3.0)
-[![dependencies Status](https://david-dm.org/SimonBaumannPro/legorange3.0/status.svg)](https://david-dm.org/SimonBaumannPro/legorange3.0)
-[![devDependencies Status](https://david-dm.org/SimonBaumannPro/legorange3.0/dev-status.svg)](https://david-dm.org/SimonBaumannPro/legorange3.0?type=dev)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
+[![Build Status](https://travis-ci.org/webcom-components/legorange.svg?branch=master)](https://travis-ci.org/webcom-components/legorange)
+[![Code Climate](https://codeclimate.com/github/webcom-components/legorange/badges/gpa.svg)](https://codeclimate.com/github/webcom-components/legorange)
 
 Draw someting in real time with legorange.
 
@@ -20,7 +17,7 @@ Ensure you have [node](https://nodejs.org/en/) greater than version 4 (Code cont
 
 ### Installation
 
-1. Get repo with `git clone https://github.com/SimonBaumannPro/legorange2.0.git`
+1. Get repo with `git clone https://github.com/webcom-components/legorange`
 
 2. Delete the existing git repository by running `rm -rf .git`
 
@@ -37,7 +34,7 @@ npm run
 
 To only build legorange app in ./dist folder
 
-*legorange* is on https://webcom.orange.com
+*legorange* is on https://io.datasync.orange.com
 
 ```bash
 npm run build
@@ -45,7 +42,7 @@ npm run build
 
 Optional env variables :
 - NAMESPACE : namespace for signalisation. Default is *legorange*
-- WS_SERVER : webcom server url. Default is *https://webcom.orange.com*
+- WS_SERVER : webcom server url. Default is *https://io.datasync.orange.com*
 - PUBLIC_PATH : relative path of application. Default is /
 	
 ## Build and watch out legorange
@@ -58,7 +55,7 @@ npm run serve
 
 Optional env variables :
 - NAMESPACE : namespace for signalisation. Default is *legorange*
-- WS_SERVER : webcom server url. Default is *https://webcom.orange.com*
+- WS_SERVER : webcom server url. Default is *https://io.datasync.orange.com*
 - PUBLIC_PATH : relative path of application. Default is /
 
 
@@ -72,7 +69,7 @@ npm start
 
 Optional env variables :
 - NAMESPACE : namespace for signalisation. Default is *legorange*
-- WS_SERVER : webcom server url. Default is *https://webcom.orange.com*
+- WS_SERVER : webcom server url. Default is *https://io.datasync.orange.com*
 - PUBLIC_PATH : relative path of application. Default is /
 
 
