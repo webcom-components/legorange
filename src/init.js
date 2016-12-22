@@ -1,7 +1,6 @@
 /* Functions allowing the global context to know the plateform and browser used */
 
-var MobileDetect = require('mobile-detect'),
-    IScroll = require('iscroll');
+var MobileDetect = require('mobile-detect');
 
 var size; // bricks size
 var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;

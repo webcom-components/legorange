@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "font-awesome": "^4.5.0",
-    "foundation-sites": "^6.2.3",
+    "foundation-sites": "6.2.4",
     "jquery": "2.2.0",
     "jquery-confirm": "^3.0.0",
     "jquery-mobile": "^1.4.1",
