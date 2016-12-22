@@ -8,7 +8,7 @@ before_script:
   - npm prune
 script:
   - npm install
-  - PUBLIC_PATH=/legorange3.0 npm run build
+  - PUBLIC_PATH=/legorange npm run build
 #after_script:
   #- npm install -g codeclimate-test-reporter
   #- codeclimate-test-reporter < coverage/lcov.info
