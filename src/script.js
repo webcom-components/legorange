@@ -41,7 +41,7 @@ $(window).on("load", function (){
   globalInit();
 
   // Handle the device orientation change
-  $(window).on('orientationchange', ev.doOnOrientationChange());
+  //$(window).on('orientationchange', ev.doOnOrientationChange());
 
   // drawspace scale from 1 to 0.5
   btn_dezoom.on('click', function(){

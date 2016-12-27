@@ -1,7 +1,7 @@
 {
-  "name": "legorange3.0",
-  "version": "3.0.0",
-  "description": "Application Legorange using webcom",
+  "name": "legorange",
+  "version": "2.0.0",
+  "description": "Application Legorange using Flexible dataSync",
   "main": "",
   "scripts": {
     "start": "webpack-dev-server --hot --host 0.0.0.0",
@@ -28,8 +28,6 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^3.1.3",
     "css-loader": "^0.26.0",
-    "eslint": "^3.1.1",
-    "eslint-loader": "^1.2.1",
     "exports-loader": "^0.6.3",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -51,7 +49,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SimonBaumannPro/legorange3.0.git"
+    "url": "git+https://github.com/webcom-components/legorange.git"
   },
   "author": "Simon Baumann",
   "license": "ISC",
@@ -59,7 +57,7 @@
     "node": ">=4"
   },
   "bugs": {
-    "url": "https://github.com/SimonBaumannPro/legorange3.0/issues"
+    "url": "https://github.com/webcom-components/legorange/issues"
   },
-  "homepage": "https://github.com/SimonBaumannPro/legorange3.0#readme"
+  "homepage": "https://github.com/webcom-components/legorange#readme"
 }
