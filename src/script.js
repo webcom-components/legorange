@@ -20,20 +20,14 @@ var drawspace = $(".drawspace"),
     eraseAll = $("#eraseAll"),
     btn_panel = $('#btn_panel'),
     panel = $('#overlayPanel'),
+    bricksize = webcom.bricksize,
     mode = "draw",
     topHeight,
     smartphone,
     scale = 0.5,
     myScroll;
 
-
-
 module.exports.mode = mode;
-
-var bricksize = webcom.bricksize;
-//var mode = webcom.mode;
-
-
 
 $(window).on('beforeunload', function(){
   $(window).scrollTop(0);
@@ -43,15 +37,11 @@ $(window).on('beforeunload', function(){
 $(window).on("load", function (){
   $(document).foundation();
 
-
   // Initialisation du contexte global
   globalInit();
 
+  // Handle the device orientation change
   $(window).on('orientationchange', ev.doOnOrientationChange());
-
-
-  // Initial orientation check
-  //ev.doOnOrientationChange();
 
   // drawspace scale from 1 to 0.5
   btn_dezoom.on('click', function(){
@@ -104,23 +94,6 @@ $(window).on("load", function (){
     var clickX = e.pageX;
     var clickY = e.pageY;
 
-    var topDoc  = window.pageYOffset || document.documentElement.scrollTop,
-        leftDoc = window.pageXOffset || document.documentElement.scrollLeft;
-
-    var topDraw  = $('.drawspace').scrollTop(),
-        leftDraw = $('.drawspace').scrollLeft();    
-
-    var topBody  = $('body').scrollTop(),
-        leftBody = $('body').scrollLeft(); 
-
-    var topHtml  = $('html').scrollTop(),
-        leftHtml = $('html').scrollLeft();
-
-// console.log('topDoc= '+topDoc+' - leftDoc= '+leftDoc);
-// console.log('topDraw= '+topDraw+' - leftDraw= '+leftDraw);
-// console.log('topBody= '+topBody+' - leftBody= '+leftBody);
-// console.log('topHtml= '+topHtml+' - leftHtml= '+leftHtml);
-
     // mobile device == false
     if (smartphone === 0) {
       x=parseInt((clickX - drawspace.offset().left) / bricksize);
@@ -154,10 +127,6 @@ $(window).on("load", function (){
 
           scrollX = (clickX + overflowX + offX)*2;
           scrollY = (clickY + overflowY + offY)*2;  
-console.log('viewpWidth= '+viewpWidth+' - viewpHeight= '+viewpHeight);
-console.log('overflowX= '+overflowX+' - overflowY= '+overflowY);  
-console.log('offX= '+offX+' - offY= '+offY);
-console.log('X= '+scrollX+' - Y= '+scrollY);
           btn_dezoom.show();
           transcale(scrollX, scrollY, scale);
         }
@@ -216,7 +185,6 @@ function globalInit() {
   $('.menu-icon').css('margin-top', margin_menuicon +'px');
   $('.top-bar-title').css('margin-top', margin_menutitle +'px');
   $('.ui-page-theme-a').css('text-shadow', '0 0 0');
-
 
   // Disable Ctrl+mouseWheel zoom on cross-browser 
   $(window).bind('mousewheel DOMMouseScroll', function (event) {

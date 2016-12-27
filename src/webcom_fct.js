@@ -11,6 +11,8 @@ var webcom_url=__WEBCOM_SERVER__+"/base/"+__NAMESPACE__,
 
     module.exports.bricksize = bricksize;
 
+
+// Handle the display to remove all the drawpace's bricks
 module.exports.eraseAll = function() {
 	$.confirm({
     icon: 'fa fa-warning',
