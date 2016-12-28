@@ -6,8 +6,11 @@
 }
 
 html {
-    position: relative;
     overflow: auto;
+}
+
+body {
+    -webkit-overflow-scrolling: touch;
 }
 
 html,body {
@@ -383,7 +386,7 @@ hr{
     }
 
     .topbar {
-        height: 13vh;
+        height: 8vh;
         padding: 2.5vh;
     }
     .menu-icon {

@@ -31,7 +31,7 @@ if (is_IE){
 if (os === 'iOS') {
   if (mobile === 'iPhone') {
       $('.topbar').css('width', width);
-      $('body').css('overflow', 'scroll');
+      $('body').css('position','absolute').css('-webkit-overflow-scrolling','touch').css('overflow', 'scroll');
   }
   document.querySelector('meta[name=viewport]').setAttribute('content', "width=device-width, height=device-height, initial-scale=1, user-scalable=no");
   $('.drawspace').css('overflow','scroll');
