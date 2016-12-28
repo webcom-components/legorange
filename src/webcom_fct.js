@@ -71,7 +71,7 @@ module.exports.updatePos = function(x, y) {
   	mode = ev.mode;
     if (mode === "draw" || mode === "eraseAll") {
       brick.set({color: color, x: x, y: y, uid: authData.uid});
-    } else if (currentData.val() != null)
+    } else if (currentData.val() !== null)
       brick.set(null);
   });
 };

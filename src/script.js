@@ -68,13 +68,13 @@ $(window).on("load", function (){
         mousemove : function(e){
           if (e.defaultPrevented ) return;
           console.log('pageY= '+e.pageY +'     offset= '+ drawspace.offset().top);
-          x=parseInt((e.pageX - drawspace.offset().left) / bricksize);
-          y=parseInt((e.pageY - drawspace.offset().top) / bricksize);
+          x=parseInt((e.pageX - drawspace.offset().left) / bricksize, 10);
+          y=parseInt((e.pageY - drawspace.offset().top) / bricksize, 10);
 
           new_move = x + "-" + y;
 
           // Disable brick overflow outside drawspace
-          if (new_move!=last_move && e.pageX < drawspace.width() && e.pageY < (drawspace.height() + topHeight) && e.pageX > 0 && e.pageY > 0) {
+          if (new_move !== last_move && e.pageX < drawspace.width() && e.pageY < (drawspace.height() + topHeight) && e.pageX > 0 && e.pageY > 0) {
             webcom.updatePos(x, y, mode);
           }
           last_move=new_move;
@@ -96,8 +96,8 @@ $(window).on("load", function (){
 
     // mobile device == false
     if (smartphone === 0) {
-      x=parseInt((clickX - drawspace.offset().left) / bricksize);
-      y=parseInt((clickY - drawspace.offset().top) / bricksize);
+      x=parseInt((clickX - drawspace.offset().left) / bricksize, 10);
+      y=parseInt((clickY - drawspace.offset().top) / bricksize, 10);
       webcom.updatePos(x,y);
     } else { // mobile device == true
       if (panel.hasClass('ui-panel-open') === true) {
@@ -108,8 +108,8 @@ $(window).on("load", function (){
       } else {
         // Add brick if draw mode
         if (scale === 2) {
-          x=parseInt(((clickX - drawspace.offset().left) / bricksize)/2);
-          y=parseInt(((clickY - drawspace.offset().top) / bricksize)/2);
+          x=parseInt(((clickX - drawspace.offset().left) / bricksize)/2, 10);
+          y=parseInt(((clickY - drawspace.offset().top) / bricksize)/2, 10);
           webcom.updatePos(x,y);
         }
         // Zoom if navigation mode
@@ -118,10 +118,10 @@ $(window).on("load", function (){
 
           var scrollX,
               scrollY,
-              viewpWidth = parseInt(window.innerWidth/3.5),
-              viewpHeight = parseInt(window.innerHeight/3.5),
-              overflowX = parseInt(e.clientX - viewpWidth),
-              overflowY = parseInt(e.clientY - viewpHeight),
+              viewpWidth = parseInt(window.innerWidth/3.5, 10),
+              viewpHeight = parseInt(window.innerHeight/3.5, 10),
+              overflowX = parseInt(e.clientX - viewpWidth, 10),
+              overflowY = parseInt(e.clientY - viewpHeight, 10),
               offX = $('body').scrollLeft(),
               offY = $('body').scrollTop();
 
@@ -234,4 +234,11 @@ $("#menu-DT").click(ev.hide_colors());
 // change mode (draw or erase)
 $(".mode").click(function(e){
   module.exports.mode = ev.change_mode($(this).attr("id"));
+});
+
+$('#chat').click(function(){
+  $.alert({
+    title: 'Oops désolé ...',
+    content : 'Fonctionnalité en cours de développement'
+  });
 });

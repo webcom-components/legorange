@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "HelvNeue75";
+    font-family: 'HelvNeue75';
     src: url('../fonts/HelvNeue75_W1G.woff2') format('woff2'),
          url('../fonts/HelvNeue75_W1G.woff') format('woff'),
          url('../fonts/HelvNeue75_W1G.ttf') format('truetype');
@@ -66,7 +66,6 @@ html,body {
     height: 20px;
     position: absolute;
     z-index: 2;
-    background: url('../images/bricks/orangeBrick.png') no-repeat;
 }
 
 .zoomspace {
@@ -258,10 +257,8 @@ hr{
     color: #ff7900;
 }
 
-.webcomLink {
-    font-size: 16px; 
-    text-align: 'center'; 
-    text-decoration: underline;
+.webcomLink, .title {
+    font-size: 18px; 
     color: #FF4500 !important;
 }
 
@@ -287,6 +284,10 @@ hr{
     color: #fff !important;
     letter-spacing: -.01em !important;
     border-bottom: 1px solid white;
+}
+
+.menu-title:focus {
+    outline: 0;
 }
 
 .menu-submenu {
@@ -331,8 +332,10 @@ hr{
 }
 .tablet .menu-icon {
     -ms-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -o-transform: scale(1.5);
     -webkit-transform: scale(1.5);
-    transforms: scale(1.5);
+    transform: scale(1.5);
     margin-right: 13px;
 }
 
@@ -366,6 +369,8 @@ hr{
     }
     .menu-icon {
         -ms-transform: scale(1.25); /* IE 9 */
+        -moz-transform: scale(1.25);
+        -o-transform: scale(1.25);
         -webkit-transform: scale(1.25); /* Chrome, Safari, Opera */
         transform: scale(1.25);
         margin-right: 8px;
@@ -390,8 +395,10 @@ hr{
         padding: 2.5vh;
     }
     .menu-icon {
-        -ms-transform: scale(1.5); /* IE 9 */
-        -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+        -ms-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        -webkit-transform: scale(1.5);
         transform: scale(1.5);
         margin-right: 15px;
     }

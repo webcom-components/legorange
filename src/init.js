@@ -4,7 +4,7 @@ var MobileDetect = require('mobile-detect');
 
 var size; // bricks size
 var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-var is_IE = navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv 11/));
+var is_IE = navigator.appName === 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv 11/));
 var md = new MobileDetect(window.navigator.userAgent);
 
 var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -32,6 +32,7 @@ if (os === 'iOS') {
   if (mobile === 'iPhone') {
       $('.topbar').css('width', width);
       $('body').css('position','absolute').css('-webkit-overflow-scrolling','touch').css('overflow', 'scroll');
+      $('#overlayPanel').css('position','fixed');
   }
   document.querySelector('meta[name=viewport]').setAttribute('content', "width=device-width, height=device-height, initial-scale=1, user-scalable=no");
   $('.drawspace').css('overflow','scroll');

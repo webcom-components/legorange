@@ -81,7 +81,7 @@ const config = {
 		new webpack.DefinePlugin({
 			__WEBCOM_SERVER__: JSON.stringify(process.env.WS_SERVER || 'https://webcom.orange.com'),
 			__NAMESPACE__: JSON.stringify(process.env.NAMESPACE || 'legorange')
-		}),
+		})
 	],
 	progress: true,
 	target: 'web'

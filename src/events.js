@@ -16,7 +16,7 @@ module.exports.disableScroll = function(sc) {
 	} else {
 		$('html').removeClass('hideOverflow').addClass('showOverflow');
 		drawspace.removeClass('hideOverflow').addClass('showOverflow');
-		if (sc == 2) {
+		if (sc === 2) {
 			$('#btn_dezoom').show();
 		}
 	}
@@ -24,28 +24,28 @@ module.exports.disableScroll = function(sc) {
 
 /* Manage the display mode in the off-canvas menu */
 module.exports.change_mode = function(new_mode) {
-	if (new_mode=="draw" || new_mode=="eraseAll") {
+	mode = new_mode;
+	if (new_mode === "draw" || new_mode === "eraseAll") {
 	    $(".ul-drawTools").attr("style", "height: 200px");
 	    $(".drawTools-buttons-container").css("height", "50%");
 	    $(".color-container").show();
   	}
   	else {
-	    $(".ul-drawTools").attr("style", "height: 100px");
-	    $(".drawTools-buttons-container").css("height", "100%");
-	    $(".color-list").hide();      
-  	}
+  	 	hide_colors();  // Hide the color section inside the panel
+  	} 
   	module.exports.mode = new_mode;
   	return new_mode;
 };
 
 /* Hide the color section inside the panel */
-module.exports.hide_colors = function() {
-	if (mode == "erase") {
+hide_colors = function() {
+	if (mode === "erase") {
 	    $(".ul-drawTools").attr("style", "height: 100px");
 	    $(".drawTools-buttons-container").css("height", "100%");
 	    $(".color-list").hide();
     }
 };
+module.exports.hide_colors = hide_colors;
 
 /* Highlight the active color inside the color section */
 module.exports.color_active = function(elem) {
