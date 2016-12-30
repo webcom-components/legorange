@@ -67,7 +67,6 @@ $(window).on("load", function (){
           handlers = {
         mousemove : function(e){
           if (e.defaultPrevented ) return;
-          console.log('pageY= '+e.pageY +'     offset= '+ drawspace.offset().top);
           x=parseInt((e.pageX - drawspace.offset().left) / bricksize, 10);
           y=parseInt((e.pageY - drawspace.offset().top) / bricksize, 10);
 
@@ -78,7 +77,6 @@ $(window).on("load", function (){
             webcom.updatePos(x, y, mode);
           }
           last_move=new_move;
-          console.log('last_move= '+last_move);
         },
         mouseup : function(e){
           $(this).off(handlers);   
@@ -189,7 +187,7 @@ function globalInit() {
   // Disable Ctrl+mouseWheel zoom on cross-browser 
   $(window).bind('mousewheel DOMMouseScroll', function (event) {
     if (event.ctrlKey === true) {
-      if (event.defaultPrevented ) return;
+      event.preventDefault();
     }
   });
 
